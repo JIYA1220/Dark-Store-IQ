@@ -148,7 +148,7 @@ cython_debug/
 # PyCharm / IntelliJ
 .idea/
 
-# Data and Models (Optional: ignore if they are very large or sensitive)
-data/*.db
-data/*.csv
-models/*.pkl
+# Data and Models (Included for deployment)
+# data/*.db
+# data/*.csv
+# models/*.pkl
