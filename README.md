@@ -272,7 +272,7 @@ If you want to take this from “project” to “portfolio-grade production”:
 Built by **Jiya**
 
 - GitHub: https://github.com/JIYA1220
-- LinkedIn: (add your profile link here)
+- LinkedIn:[ www.linkedin.com/in/jiya-sharma-394565338](https://www.linkedin.com/in/jiya-sharma-394565338)
 
 ---
 
