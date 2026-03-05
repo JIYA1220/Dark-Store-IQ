@@ -61,6 +61,7 @@ body {{ background: var(--bg); font-family: 'Inter', sans-serif; margin: 0; colo
 .app-title {{ font-size: 2.5rem; font-weight: 800; color: var(--primary); font-family: 'Plus Jakarta Sans'; margin-bottom: 1.5rem; letter-spacing: -1px; }}
 .nav-container {{ display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; padding: 0 1rem; }}
 .nav-btn {{ background: transparent; border: 2px solid var(--secondary); border-radius: 12px; padding: 0.6rem 1.2rem; color: var(--primary); font-weight: 700; text-decoration: none; transition: 0.3s ease; cursor: pointer; }}
+
 .nav-btn:hover {{ background: var(--header); transform: scale(1.05); }}
 .nav-btn.active {{ background: var(--primary); color: white !important; border-color: var(--primary); box-shadow: 0 4px 15px rgba(117, 106, 182, 0.2); }}
 .glass-card {{ background: white; border-radius: 20px; border: 1px solid rgba(172, 135, 197, 0.2); box-shadow: 0 4px 20px rgba(0,0,0,0.02); padding: 1.5rem; transition: 0.3s; height: 100%; }}
