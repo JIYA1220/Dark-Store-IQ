@@ -275,16 +275,6 @@ app.run(debug=False, port=8051)
 
 ---
 
-## Notes / Production Improvements (Optional)
-
-If you want to take this from “project” to “portfolio-grade production”:
-- add a `.github/workflows/ci.yml` for lint + smoke test
-- add `pytest` tests for DB schema + model artifact presence
-- add a `Dockerfile` + `docker-compose.yml`
-- add a real `src/` package structure and config management
-
----
-
 ## Connect
 
 Built by **Jiya**
