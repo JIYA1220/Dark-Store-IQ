@@ -18,7 +18,7 @@
 
 **Business Question:** *Where should a quick-commerce company open its next dark store — and how confident are we?*
 
-Dark Store IQ is an end-to-end analytics + ML application that generates a market dataset, trains models, and launches a **decision-grade dashboard** for expansion planning. It helps teams evaluate zones using a blend of demand signals, operational feasibility metrics, competitive pressure, and socioeconomic indicators.
+Dark Store IQ is an end-to-end analytics + ML application that utilizes a **simulated operational dataset based on real dark store benchmarks**, trains models, and launches a **decision-grade dashboard** for expansion planning. It helps teams evaluate zones using a blend of demand signals, operational feasibility metrics, competitive pressure, and socioeconomic indicators.
 
 This is not just a UI—this repo includes:
 - a **SQLite “analytics warehouse”**
@@ -41,7 +41,12 @@ This is not just a UI—this repo includes:
 
 </div>
 
-> Note: This project generates **synthetic but realistic** quick-commerce market data (so it runs immediately without private company data).
+> Note: This project generates a **simulated operational dataset based on real dark store benchmarks** (so it runs immediately without private company data).
+
+### Core Findings
+- **Identified variable revenue potential** across tier-based city segments using simulated demand signals.
+- **Optimized expansion priority** by cross-referencing opportunity scores with real-estate feasibility.
+- **Quantified market saturation** in high-density zones to avoid over-investment.
 
 ---
 
@@ -50,14 +55,14 @@ This is not just a UI—this repo includes:
 ```text
 +---------------------------------------------------------------------+
 |                         DATA + MODEL ARTIFACTS                       |
-|   Synthetic Zone Data (Cities)  ·  Trends  ·  Feature Importance     |
+|   Simulated Zone Data (Cities)  ·  Trends  ·  Feature Importance     |
 |                SQLite Warehouse: data/darkstore.db                   |
 +-------------------------------+-------------------------------------+
                                 |
                                 v
                 +------------------------------+
                 | Stage 01 — Data Generation   |
-                | - Synthetic zone-level data  |
+                | - Simulated zone-level data  |
                 | - Monthly trends             |
                 | - Writes SQLite tables       |
                 +---------------+--------------+
