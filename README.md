@@ -4,11 +4,11 @@
 
 ### A Production-Grade, End-to-End Location Intelligence System for Quick Commerce
 
-**Multi-City Zone Database · ML Scoring (0–100) · Open/No-Open Recommendations · Tier Segmentation (KMeans) · Geospatial Map · Trends · Zone Comparator · Exportable Data Vault · Printable Executive Report · Interactive Dash UI**
+**10-city simulated zone dataset (SQLite) · ML scoring (0–100) · Open/No-Open recommendations · Tier segmentation (KMeans) · Geospatial map · Trends · Zone comparator · Exportable data vault · Printable executive report · Interactive Dash UI**
 
 <br/>
 
-[Quick Start](#quick-start) &nbsp;·&nbsp; [Key Results](#key-results) &nbsp;·&nbsp; [Architecture](#architecture) &nbsp;·&nbsp; [Tech Stack](#tech-stack) &nbsp;·&nbsp; [Project Structure](#project-structure) &nbsp;·&nbsp; [Dashboard Pages](#dashboard-pages) &nbsp;·&nbsp; [ML Deep Dive](#ml-deep-dive) &nbsp;·&nbsp; [Troubleshooting](#troubleshooting)
+[Quick Start](#quick-start) &nbsp;·&nbsp; [Key Results](#key-results) &nbsp;·&nbsp; [Architecture](#architecture) &nbsp;·&nbsp; [Tech Stack](#tech-stack) &nbsp;·&nbsp; [Project Structure](#project-structure) &nbsp;·&nbsp; [Dashboard Pages](#dashboard-pages) &nbsp;·&nbsp; [ML Deep Dive](#ml-deep-dive) &nbsp;·&nbsp; [Screenshots](#screenshots) &nbsp;·&nbsp; [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -18,7 +18,7 @@
 
 **Business Question:** *Where should a quick-commerce company open its next dark store — and how confident are we?*
 
-Dark Store IQ is an end-to-end analytics + ML application that utilizes a **simulated operational dataset based on real dark store benchmarks**, trains models, and launches a **decision-grade dashboard** for expansion planning. It helps teams evaluate zones using a blend of demand signals, operational feasibility metrics, competitive pressure, and socioeconomic indicators.
+Dark Store IQ is an end-to-end analytics + ML application that generates a **simulated operational quick-commerce market dataset**, trains models, and launches a **decision-grade dashboard** for expansion planning. It helps teams evaluate zones using a blend of demand signals, operational feasibility metrics, competitive pressure, and socioeconomic indicators.
 
 This is not just a UI—this repo includes:
 - a **SQLite “analytics warehouse”**
@@ -41,27 +41,9 @@ This is not just a UI—this repo includes:
 
 </div>
 
-> Note: This project generates a **simulated operational dataset based on real dark store benchmarks** (so it runs immediately without private company data).
-
-### Core Findings
-- **Identified variable revenue potential** across tier-based city segments using simulated demand signals.
-- **Optimized expansion priority** by cross-referencing opportunity scores with real-estate feasibility.
-- **Quantified market saturation** in high-density zones to avoid over-investment.
+> Note: This project generates **simulated operational quick-commerce market data** (so it runs immediately without private company data).
 
 ---
-## Screenshots
-<div align="center">
-
-### Overview
-<img src="assets/overview.png" alt="Dark Store IQ - Overview dashboard" width="900"/>
-
-### Site Map
-<img src="assets/site-map.png" alt="Dark Store IQ - Site Map view" width="900"/>
-
-### ML Insights
-<img src="assets/ml-insights.png" alt="Dark Store IQ - ML Insights (feature importance + PCA)" width="900"/>
-
-</div>
 
 ## Architecture
 
@@ -161,7 +143,7 @@ Open: **http://127.0.0.1:8050**
 Dark-Store-IQ/
 |
 +-- data/
-|   +-- generate_data.py              <- Synthetic data generator
+|   +-- generate_data.py              <- Simulated operational data generator
 |   +-- darkstore.db                  <- SQLite warehouse (generated)
 |
 +-- models/
@@ -181,41 +163,16 @@ Dark-Store-IQ/
 
 ## Dashboard Pages
 
-### 1) Overview
-- Executive KPIs (zones, recommendations, avg score, order volume)
-- Top zones ranking
-- Tier distribution
+Inside the UI you’ll find:
 
-### 2) Site Map (Geospatial)
-- Zone markers sized by opportunity score
-- Colored by tier classification (Prime / High Potential / Emerging / Wait & Watch)
-
-### 3) Data Vault
-- Filtered table view for zones
-- CSV export (filtered)
-
-### 4) AI Predictor (Simulation)
-Enter key assumptions (population density, AOV, daily orders, rent, income band) and get:
-- **RECOMMENDED / NOT RECOMMENDED**
-- confidence score (probability)
-- opportunity score gauge
-
-### 5) Trends
-- Monthly city-level trend lines (order volume)
-
-### 6) ML Insights
-- Feature importance chart
-- PCA projection + tier visualization
-
-### 7) Zone Compare
-- Side-by-side KPIs for two zones
-- Radar chart comparison
-- Pin favorite zones locally (browser storage)
-
-### 8) Executive Report
-- Top 5 strategic sites
-- Estimated investment + ROI logic
-- Print-friendly layout for stakeholder sharing
+- **Overview**: executive KPIs, top zones ranking, tier split  
+- **Site Map**: geospatial view of zones and tiers  
+- **Data Vault**: filterable table + CSV export  
+- **AI Predictor**: what-if simulation (inputs → recommendation + confidence + score gauge)  
+- **Trends**: monthly city-level demand patterns  
+- **ML Insights**: feature importance + PCA segmentation plot  
+- **Zone Compare**: KPI benchmark + radar chart + pin favorites  
+- **Executive Report**: print-ready summary with top strategic sites and ROI-style metrics  
 
 ---
 
@@ -227,9 +184,9 @@ Enter key assumptions (population density, AOV, daily orders, rent, income band)
 - **Clusterer**: KMeans (4 clusters) → assigns zone tiers
 - **PCA**: used for 2D visualization of segmentation
 
-### Feature Inputs (high-level)
-The system uses demand, competition, operations, and demographic signals, such as:
-- population density, daily orders, avg order value
+### Signals / Inputs (high-level)
+The system uses demand, competition, operations, and demographic signals such as:
+- population density, daily orders, avg order value (AOV)
 - competitor density, road connectivity
 - delivery rating, delivery time
 - internet penetration
@@ -239,13 +196,20 @@ The system uses demand, competition, operations, and demographic signals, such a
 
 ---
 
-## “Real-World” Use Cases
+## Screenshots
 
-This kind of system mirrors how quick-commerce operators evaluate expansion:
-- **identify high-demand clusters**
-- **avoid saturated competitor-heavy zones**
-- **balance rental cost vs. revenue potential**
-- **optimize last-mile feasibility by city/zone profile**
+<div align="center">
+
+### Overview
+<img src="assets/overview.png" alt="Dark Store IQ - Overview dashboard" width="900"/>
+
+### Site Map
+<img src="assets/site-map.png" alt="Dark Store IQ - Site Map view" width="900"/>
+
+### ML Insights
+<img src="assets/ml-insights.png" alt="Dark Store IQ - ML Insights (feature importance + PCA)" width="900"/>
+
+</div>
 
 ---
 
@@ -280,9 +244,8 @@ app.run(debug=False, port=8051)
 Built by **Jiya**
 
 - GitHub: https://github.com/JIYA1220
-- LinkedIn:[ www.linkedin.com/in/jiya-sharma-394565338](https://www.linkedin.com/in/jiya-sharma-394565338)
+- LinkedIn:https://www.linkedin.com/in/jiya-sharma-394565338
 
 ---
 
-### If this project helped you
-Consider starring the repo — it helps others find it.
+*If this project was useful to you, consider starring the repository.*
