@@ -49,6 +49,19 @@ This is not just a UI—this repo includes:
 - **Quantified market saturation** in high-density zones to avoid over-investment.
 
 ---
+## Screenshots
+<div align="center">
+
+### Overview
+<img src="assets/overview.png" alt="Dark Store IQ - Overview dashboard" width="900"/>
+
+### Site Map
+<img src="assets/site-map.png" alt="Dark Store IQ - Site Map view" width="900"/>
+
+### ML Insights
+<img src="assets/ml-insights.png" alt="Dark Store IQ - ML Insights (feature importance + PCA)" width="900"/>
+
+</div>
 
 ## Architecture
 
